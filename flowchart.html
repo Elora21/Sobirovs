@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management and Nurturing Flowchart</title>
+    <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .flowchart {
+            margin-bottom: 30px;
+        }
+        .info-section {
+            margin-top: 30px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .info-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .info-section pre {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Management and Nurturing Flowchart</h1>
+    <div class="flowchart">
+        <div class="mermaid">
+            graph TD
+                A[Collect Offline Contact Information] --> B[Record Information in Excel]
+                B --> C[Include Event Name and Details]
+                C --> D[Ask for Consent to Receive Communication]
+                D --> E{Consent Given?}
+                E -- No --> F[Send Email to Request Consent]
+                F --> G{Consent Received?}
+                G -- Yes --> H[Contact Added]
+                G -- No --> I[Do Not Add to Contact List]
+                E -- Yes --> H[Contact Added]
+                H --> J[Determine Contact Stage]
+                J --> K[New Contact? Send Welcome Email]
+                J --> L[Active Lead? Personalize Engagement]
+                J --> M[Dormant Lead? Re-engage]
+                J --> N[Existing Client? Retain and Provide Value]
+                K --> O[Analyze Behavior]
+                L --> O
+                M --> O
+                O --> P[Engaged? Targeted Follow-Up]
+                O --> Q[Less Engaged? Value-Driven Message]
+                O --> R[Inactive? Re-Engagement Campaign]
+                P --> S[Define Interaction Goal]
+                Q --> S
+                R --> S
+                S --> T[Goal: Educate? Share Resources]
+                S --> U[Goal: Engage? Invite to Events]
+                S --> V[Goal: Convert? Offer Consultations]
+                S --> W[Goal: Retain? Loyalty Program]
+                T --> X[Action Delivered]
+                U --> X
+                V --> X
+                W --> X
+        </div>
+    </div>
+    <div class="info-section">
+        <h2>Sample Email for Consent</h2>
+        <pre>
+Subject: Great Meeting You at [Event Name] – Stay Connected!
+
+Hi [First Name],
+
+It was a pleasure meeting you at [Event Name]. I wanted to follow up 
+and share more about how we can help you achieve [specific goal]. 
+
+Would you like to receive updates, tips, and offers via our newsletter? 
+Click here to opt-in: [Opt-In Link].
+
+If you’re not interested, feel free to ignore this email, and you won’t 
+receive further messages.
+
+Looking forward to staying in touch!
+
+Best regards,  
+[Your Name]  
+[Your Title/Company Name]  
+[Your Contact Information]
+        </pre>
+    </div>
+    <div class="info-section">
+        <h2>Excel Information Fields</h2>
+        <pre>
+Excel Columns to Include:
+1. First Name: Contact's first name.
+2. Last Name: Contact's last name.
+3. Email Address: Contact's email address.
+4. Phone Number: Contact's phone number (if applicable).
+5. Event Name/Source: Name of the event or source where the contact was met.
+6. Consent Status: Mark as "Express" or "Implied."
+7. Date Collected: The date when the contact information was collected.
+8. Notes: Any additional context or details about the lead.
+        </pre>
+        <h2>Sample Excel Row:</h2>
+        <pre>
+| First Name | Last Name | Email Address        | Phone Number  | Event Name      | Consent Status | Date Collected | Notes            |
+|------------|-----------|----------------------|---------------|-----------------|----------------|----------------|------------------|
+| John       | Doe       | john.doe@example.com | 123-456-7890  | Trade Show 2024 | Express        | 2024-11-27     | Interested in A. |
+        </pre>
+    </div>
+</body>
+</html>
